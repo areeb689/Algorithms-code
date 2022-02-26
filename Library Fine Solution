@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {    
+    
+    int edd, emm, eyyyy, add, amm, ayyyy;
+    int fine =0;
+    
+    scanf("%d%d%d%d%d%d", &add, &amm, &ayyyy, &edd, &emm, &eyyyy);
+    
+    if(ayyyy < eyyyy){
+        fine = 0;    
+    }
+    else if(ayyyy > eyyyy){
+        fine = 10000;
+    }
+    else if(ayyyy == eyyyy){
+        if(amm < emm){
+            fine = 0;
+        }
+        else if(amm > emm){
+            fine = 500 * (amm - emm);
+        }
+        else if(amm == emm){
+            if(add <= edd){
+                fine = 0;
+            }
+            else if(add > edd){
+                fine = 15 * (add - edd);
+            }
+        }
+    }
+    
+    printf("%d", fine);
+    
+    return 0;
+}
+
+
+
+
